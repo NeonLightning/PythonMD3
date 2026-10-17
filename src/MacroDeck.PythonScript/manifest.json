@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
-  "id": "com.example.python-script",
+  "id": "com.neonlightning.python-script",
   "name": "Python Script Runner",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Run a Python script from a Macro Deck button.",
   "icon": "Assets/icon.svg",
   "entrypoints": {
@@ -10,7 +10,7 @@
     "osx-arm64": { "executable": "runtimes/osx-arm64/MacroDeck.PythonScript" },
     "linux-x64": { "executable": "runtimes/linux-x64/MacroDeck.PythonScript" }
   },
-  "publisher": { "name": "Your Name" },
+  "publisher": { "name": "NeonLightning" },
   "license": "MIT",
   "compatibility": { "macroDeck": ">=3.0.0-beta.17" }
 }

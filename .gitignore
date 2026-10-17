@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/src/MacroDeck.PythonScript/obj
+/src/MacroDeck.PythonScript/bin
+artifacts/

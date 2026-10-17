@@ -15,9 +15,9 @@
   <ItemGroup>
     <!-- Floating prerelease range while the 3.0 SDK is in preview.
          Pin these to an exact version once you have a build that works. -->
-    <PackageReference Include="MacroDeck.Sdk" Version="3.0.0-*" />
-    <PackageReference Include="MacroDeck.Plugin.Hosting" Version="3.0.0-*" />
-    <PackageReference Include="MacroDeck.Plugin.Serilog" Version="3.0.0-*" />
+    <PackageReference Include="MacroDeck.Sdk" Version="3.0.0-beta.17" />
+    <PackageReference Include="MacroDeck.Plugin.Hosting" Version="3.0.0-beta.17" />
+    <PackageReference Include="MacroDeck.Plugin.Serilog" Version="3.0.0-beta.17" />
   </ItemGroup>
 
   <ItemGroup>
