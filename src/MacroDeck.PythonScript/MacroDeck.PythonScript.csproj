@@ -6,23 +6,22 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>MacroDeck.PythonScript</RootNamespace>
+    <AssemblyName>MacroDeck.PythonScript</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <UserSecretsId>MacroDeck.PythonScript-PluginDevelopment</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Content Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\icon.svg" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
-
   <ItemGroup>
-    <!-- Floating prerelease range while the 3.0 SDK is in preview.
-         Pin these to an exact version once you have a build that works. -->
-    <PackageReference Include="MacroDeck.Sdk" Version="3.0.0-beta.17" />
-    <PackageReference Include="MacroDeck.Plugin.Hosting" Version="3.0.0-beta.17" />
-    <PackageReference Include="MacroDeck.Plugin.Serilog" Version="3.0.0-beta.17" />
+      <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-
   <ItemGroup>
-    <None Update="manifest.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Include="Assets\**" CopyToOutputDirectory="PreserveNewest" LinkBase="Assets" />
+      <PackageReference Include="MacroDeck.Plugin.Analyzers" PrivateAssets="all" />
+      <PackageReference Include="MacroDeck.Plugin.Hosting" />
+      <PackageReference Include="MacroDeck.Plugin.Serilog" />
+      <PackageReference Include="MacroDeck.Sdk" />
   </ItemGroup>
 
 </Project>

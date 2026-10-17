@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/solution/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MacroDeck.PythonScript/MacroDeck.PythonScript.csproj" />
+  </Folder>
+</Solution>

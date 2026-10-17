@@ -5,22 +5,18 @@ using Serilog;
 
 namespace MacroDeck.PythonScript;
 
-/// <summary>Starts a Python script as a child process. No SDK types in here.</summary>
 public static class PythonRunner
 {
     public sealed record Request(string Script, string Arguments, string? PythonPath, string? WorkingDirectory);
 
-    // Variables an AppImage injects that can break a system Python (wrong libs, wrong stdlib).
     private static readonly string[] ScrubbedEnv =
     [
         "LD_LIBRARY_PATH", "LD_PRELOAD", "PYTHONHOME", "PYTHONPATH",
         "APPDIR", "APPIMAGE", "ARGV0", "OWD",
     ];
 
-    // How long to wait for an immediate crash before treating the script as "running".
     private const int QuickFailWindowMs = 2000;
 
-    /// <summary>Returns null on success (started, and did not fail immediately) or an error message.</summary>
     public static string? Start(Request req, ILogger log)
     {
         if (string.IsNullOrWhiteSpace(req.Script))
@@ -48,10 +44,9 @@ public static class PythonRunner
             foreach (var name in ScrubbedEnv)
                 psi.Environment.Remove(name);
 
-            // "py" is the Windows launcher; "-3" picks Python 3.
             if (Path.GetFileNameWithoutExtension(exe).Equals("py", StringComparison.OrdinalIgnoreCase))
                 psi.ArgumentList.Add("-3");
-            psi.ArgumentList.Add("-u"); // unbuffered so log lines arrive live
+            psi.ArgumentList.Add("-u");
             psi.ArgumentList.Add(req.Script);
             foreach (var a in SplitArgs(req.Arguments))
                 psi.ArgumentList.Add(a);
@@ -102,7 +97,6 @@ public static class PythonRunner
         else { yield return "python3"; yield return "python"; }
     }
 
-    /// <summary>Whitespace split that honours "double quotes" and 'single quotes'. No shell involved.</summary>
     public static List<string> SplitArgs(string? input)
     {
         var result = new List<string>();

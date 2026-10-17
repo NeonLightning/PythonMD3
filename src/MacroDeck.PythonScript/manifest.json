@@ -12,5 +12,11 @@
   },
   "publisher": { "name": "NeonLightning" },
   "license": "MIT",
-  "compatibility": { "macroDeck": ">=3.0.0-beta.17" }
+  "compatibility": { "macroDeck": ">=3.0.0-beta.17" },
+  "ai": {
+    "interaction": false,
+    "generatedContent": true,
+    "generatedAssets": true
+  },
+  "repository": "https://github.com/NeonLightning/PythonMD3"
 }
