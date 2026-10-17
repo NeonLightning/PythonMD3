@@ -1,0 +1,16 @@
+{
+  "manifestVersion": 1,
+  "id": "com.example.python-script",
+  "name": "Python Script Runner",
+  "version": "1.0.0",
+  "description": "Run a Python script from a Macro Deck button.",
+  "icon": "Assets/icon.svg",
+  "entrypoints": {
+    "win-x64": { "executable": "runtimes/win-x64/MacroDeck.PythonScript.exe" },
+    "osx-arm64": { "executable": "runtimes/osx-arm64/MacroDeck.PythonScript" },
+    "linux-x64": { "executable": "runtimes/linux-x64/MacroDeck.PythonScript" }
+  },
+  "publisher": { "name": "Your Name" },
+  "license": "MIT",
+  "compatibility": { "macroDeck": ">=3.0.0" }
+}
